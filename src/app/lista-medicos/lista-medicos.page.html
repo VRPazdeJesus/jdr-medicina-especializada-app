@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-img class="img-logo-nav" src='../../assets/logo.jpeg'></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item lines="full" color="primary">
+      <ion-label class="titulo">Médicos de {{funcionario}}</ion-label>
+    </ion-item>
+
+    <ion-searchbar class="bg-src" (ionChange)="onSearchTerm($event)" placeholder="Procure pelo médico" showCancelButton="focus"></ion-searchbar>
+    <div class="container">
+      <div class="row border-0 bg-src padding-row">
+        <div class="col-1 margin-grid">
+          <ion-icon color="light" class="icon-center" name="arrow-dropright-circle"></ion-icon>
+        </div>
+        <div class="col-3 margin-grid">
+          <label class="listT" >Médico</label>
+        </div>
+        <div class="col-4 margin-grid">
+          <label class="listT" >Cotações</label>
+        </div>
+        <div class="col-4 margin-grid">
+          <label class="listT" >Especialidade</label>
+        </div>
+      </div>
+      <div class="row border touch-space" *ngFor="let item of itens" lines="full" (click)="proximo()">
+        <div class="col-1 margin-grid">
+          <ion-icon class="listP" [color]="item.status == 0 ? 'danger' : 'success' " name="arrow-dropright-circle"></ion-icon>
+        </div>
+        <div class="col-3 margin-grid">
+          <label class="listP" >{{item.medico}}</label>
+        </div>
+        <div class="col-4 margin-grid">
+          <label class="listP" >{{item.cotacoes}}</label>
+        </div>
+        <div class="col-4 margin-grid">
+          <label class="listP" >{{item.especialidade}}</label>
+        </div>
+      </div>
+    </div>
+</ion-content>
+<ion-footer>
+  <ion-button (click)="voltar()" expand="full">Voltar</ion-button>
+</ion-footer>

@@ -24,3 +24,58 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+.img-logo-nav{
+    width: 30%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.bg-src{
+    background-color: #414199;
+}
+.padding-row{
+    padding-bottom: 3%;
+}
+.margin-grid{
+    padding: 0;
+    padding-left: 2px !important;
+}
+.icon-center{
+    align-items: center;
+    align-content: center;
+    display: flex;
+    margin: 0;
+    height: 100%;
+}
+.listP{
+    align-items: center;
+    display: flex;
+    height: 100%;
+    font-size: 14px !important;
+}
+.listT{
+    font-size: 15px !important;
+    color: white;
+}
+.titulo{
+    text-align:center;
+    font-size: 15px !important;
+    margin: 10 8 10 0 !important;
+}
+ion-item ion-label{
+    font-size: 15px;
+}
+.touch-space {
+    height: 55px;
+}
+.searchbar-left-aligned.sc-ion-searchbar-ios-h .searchbar-input.sc-ion-searchbar-ios {
+    padding-left: unset;
+    -webkit-padding-start: 30px;
+    padding-inline-start: 30px;
+    --background: white;
+}

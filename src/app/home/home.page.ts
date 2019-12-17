@@ -54,7 +54,7 @@ export class HomePage implements OnInit {
   entrar(value){
     if(this.cLogin=="teste@jdr.com.br" && this.cSenha=="12345678"){
       console.log("ok")
-      this.nav.navigateForward('tabs/tab2');
+      this.nav.navigateForward('/lista-medicos');
     }else{
       this.presentToast();
     }
