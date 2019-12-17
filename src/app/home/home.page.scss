@@ -1,1 +1,28 @@
-
+img {
+    display: inline;
+    width: 40%;
+  }
+.bg-white{
+    background-color: white;
+}
+.bg-blue{
+    background-color: #414199;
+}
+.full-h{
+    height: 100%;
+}
+.full-w{
+    width: 100%;
+}
+.grid-v-center{
+    height: 100%;
+    align-items: center!important;
+    align-content: center!important;
+    display: flex!important;
+}
+ion-label{
+    color:#414199!important;
+}
+ion-button{
+    margin-top:10%;
+}
