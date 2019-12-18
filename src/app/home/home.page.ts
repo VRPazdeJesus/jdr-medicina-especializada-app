@@ -1,3 +1,4 @@
+import { UsersService } from '../users.service';
 import { Component, OnInit } from '@angular/core';
 import { NavController, ToastController } from  '@ionic/angular';
 import { FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
@@ -12,7 +13,7 @@ export class HomePage implements OnInit {
   public cSenha:string;
   validations_form: FormGroup;
 
-  constructor(private nav:NavController, private toast:ToastController, private formBuilder:FormBuilder) {}
+  constructor(private nav:NavController, private toast:ToastController, private formBuilder:FormBuilder, private usersService: UsersService) {}
 
   ngOnInit(){
     this.validations_form=this.formBuilder.group({
@@ -60,6 +61,36 @@ export class HomePage implements OnInit {
     }
     this.cLogin=""
     this.cSenha=""
+  }
+
+  login(value){
+    console.log('home.login', this.cLogin);
+    console.log('home.senha', this.cSenha);
+    
+    
+    this.usersService.login(this.cLogin, this.cSenha).then((result:any) => {
+      console.log('result',result)
+      //Laço para buscar o usuário
+      for(let user of result['data']){
+        console.log(user);
+      }
+      
+      if(result['data'][0]['name'] == 'cerulean' && this.cLogin == 'teste@jdr.com.br'){
+        this.usersService.setVendedor(result['data'][0]['name']);
+        this.nav.navigateForward('/lista-medicos');
+      }
+    }).catch((error:any) => {
+      console.log('erro',error);
+      
+    }).finally(() => {
+      
+      // this.objetosImagens.forEach(element => {
+      //   element.getDownloadURL().then(res => 
+      //   this.passaToArray(res, element.name));
+      //   console.log();
+        
+      // });
+    });
   }
 
   async presentToast() {

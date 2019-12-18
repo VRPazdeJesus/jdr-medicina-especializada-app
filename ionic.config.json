@@ -1,5 +1,7 @@
 {
   "name": "jdr-medicina-especializada-app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

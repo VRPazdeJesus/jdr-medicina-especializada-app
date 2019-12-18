@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from  '@ionic/angular';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-lista-medicos',
@@ -8,8 +9,15 @@ import { NavController } from  '@ionic/angular';
 })
 export class ListaMedicosPage {
 
-  public funcionario='Joãozinho';
-  constructor(private nav:NavController) {}
+  public funcionario:string;
+  constructor(private nav:NavController, private usersService: UsersService) {
+    this.funcionario = usersService.getVendedor();
+    this.listaMedicos();
+  }
+
+  listaMedicos(){
+    this.usersService.listaMedicos(this.funcionario);
+  }
 
   voltar(){
       this.nav.navigateForward('/home');

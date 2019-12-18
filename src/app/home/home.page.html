@@ -8,7 +8,7 @@
           </ion-card-header>
         
           <ion-card-content>
-            <form [formGroup]="validations_form" (ngSubmit)="entrar(validations_form.value)">
+            <form [formGroup]="validations_form" (ngSubmit)="login(validations_form.value)">
                 <ion-item>
                     <ion-label position="floating">Login</ion-label>
                     <ion-input [(ngModel)]="cLogin" type="email" formControlName="email"></ion-input>
