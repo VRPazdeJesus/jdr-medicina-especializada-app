@@ -23,7 +23,7 @@ export class HomePage implements OnInit {
       ])),
       password:new FormControl('',Validators.compose([
         Validators.required,
-        Validators.minLength(8)  
+        Validators.minLength(6)
       ]))
     });
   }
@@ -46,57 +46,37 @@ export class HomePage implements OnInit {
       },
       {
         type:'minlenght',
-        message:'A senha deve ter no mínimo 8 caracteres'
+        message:'A senha deve ter no mínimo 6 caracteres'
       }
     ]
 
   }
 
-  entrar(value){
-    if(this.cLogin=="teste@jdr.com.br" && this.cSenha=="12345678"){
-      console.log("ok")
-      this.nav.navigateForward('/lista-medicos');
-    }else{
-      this.presentToast();
-    }
-    this.cLogin=""
-    this.cSenha=""
-  }
+  login(value){   
+    this.usersService.login(value.email, value.password).then((result:any) => {
 
-  login(value){
-    console.log('home.login', this.cLogin);
-    console.log('home.senha', this.cSenha);
-    
-    
-    this.usersService.login(this.cLogin, this.cSenha).then((result:any) => {
-      console.log('result',result)
-      //Laço para buscar o usuário
       for(let user of result['data']){
         console.log(user);
       }
       
-      if(result['data'][0]['name'] == 'cerulean' && this.cLogin == 'teste@jdr.com.br'){
+      if(result['data'][0]['name'] == 'cerulean' && value.email == 'teste@jdr.com.br'){
         this.usersService.setVendedor(result['data'][0]['name']);
         this.nav.navigateForward('/lista-medicos');
+      } else {
+        this.presentToast();
       }
+      this.cLogin="";
+      this.cSenha="";
     }).catch((error:any) => {
       console.log('erro',error);
-      
     }).finally(() => {
-      
-      // this.objetosImagens.forEach(element => {
-      //   element.getDownloadURL().then(res => 
-      //   this.passaToArray(res, element.name));
-      //   console.log();
-        
-      // });
     });
   }
 
   async presentToast() {
     const toast = await this.toast.create({
-      message: 'Login/Senha Inválidos!',
-      position: 'top',
+      message: 'Login ou Senha Inválidos!',
+      position: 'middle',
       duration: 2000
     });
     toast.present();
