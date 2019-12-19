@@ -55,6 +55,9 @@ export class HomePage implements OnInit {
   login(value){   
     this.usersService.login(value.email, value.password).then((result:any) => {
 
+      console.log('RESULT SERVICE', result);
+      
+
       for(let user of result['data']){
         console.log(user);
       }
