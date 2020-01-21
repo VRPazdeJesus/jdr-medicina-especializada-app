@@ -20,7 +20,6 @@ export class UsersService {
 
   login(email: string, password: string) {
     return new Promise((resolve, reject) => {
-      // let headers = this.headers
       this.http.get(this.API_URL + 'LOGINS')
         .subscribe((result: any) => {
           console.log('RESULT IN SERVICE',result);
@@ -47,8 +46,9 @@ export class UsersService {
     console.log('service vendedor', codVendedor);
 
     return new Promise((resolve, reject) => {
-      this.http.get(this.API_URL + 'medicos')
+      this.http.get(this.API_URL + 'MEDICOS?CODVEND='+codVendedor)
         .subscribe((result: any) => {
+          console.log('RESULT IN SERVICE',result);
           resolve(result);
         },
         (error) => {

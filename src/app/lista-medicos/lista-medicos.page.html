@@ -6,7 +6,7 @@
 
 <ion-content>
     <ion-item lines="full" color="primary">
-      <ion-label class="titulo">Médicos de {{funcionario}}</ion-label>
+      <ion-label class="titulo">Médicos de {{vendedor}}</ion-label>
     </ion-item>
 
     <ion-searchbar class="bg-src" (ionChange)="onSearchTerm($event)" placeholder="Procure pelo médico" showCancelButton="focus"></ion-searchbar>
@@ -15,13 +15,13 @@
         <div class="col-1 margin-grid">
           <ion-icon color="light" class="icon-center" name="arrow-dropright-circle"></ion-icon>
         </div>
-        <div class="col-3 margin-grid">
+        <div class="col-5 margin-grid">
           <label class="listT" >Médico</label>
         </div>
-        <div class="col-4 margin-grid">
+        <div class="col-3 margin-grid">
           <label class="listT" >Cotações</label>
         </div>
-        <div class="col-4 margin-grid">
+        <div class="col-3 margin-grid">
           <label class="listT" >Especialidade</label>
         </div>
       </div>
@@ -29,14 +29,14 @@
         <div class="col-1 margin-grid">
           <ion-icon class="listP" [color]="item.status == 0 ? 'danger' : 'success' " name="arrow-dropright-circle"></ion-icon>
         </div>
+        <div class="col-5 margin-grid">
+          <label class="listP" >{{item.Nome_Medico}}</label>
+        </div>
         <div class="col-3 margin-grid">
-          <label class="listP" >{{item.medico}}</label>
+          <label class="listP" >{{item.Total_Cotacoes}}</label>
         </div>
-        <div class="col-4 margin-grid">
-          <label class="listP" >{{item.cotacoes}}</label>
-        </div>
-        <div class="col-4 margin-grid">
-          <label class="listP" >{{item.especialidade}}</label>
+        <div class="col-3 margin-grid">
+          <label class="listP" >{{item.Codigo}}</label>
         </div>
       </div>
     </div>

@@ -56,10 +56,10 @@
     align-items: center;
     display: flex;
     height: 100%;
-    font-size: 14px !important;
+    font-size: 12px !important;
 }
 .listT{
-    font-size: 15px !important;
+    font-size: 13px !important;
     color: white;
 }
 .titulo{
@@ -78,4 +78,8 @@ ion-item ion-label{
     -webkit-padding-start: 30px;
     padding-inline-start: 30px;
     --background: white;
+}
+label {
+    display: inline-block;
+    margin-bottom: 0.3rem !important;
 }
