@@ -9,8 +9,6 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class UsersService {
   public headers = new HttpHeaders();
-  // public options = new RequestOptions({headers: this.headers}); 
-  // private API_URL = 'http://reqres.in/api/';
   private API_URL = 'http://api.jdr.com.br/REST/';
   private codVendedor:string;
   private nomeVendedor:string;

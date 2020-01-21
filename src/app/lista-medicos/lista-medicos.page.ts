@@ -31,25 +31,6 @@ export class ListaMedicosPage {
         this.itens.push(doctors);
       }
       this.totalitens = this.itens;
-
-      
-      // let isDone: boolean = false;
-      // for(let user of result['usuario']){
-      //   if(user['email']==value.email && user['senha']==value.password){
-      //     console.log('Existe');
-      //     console.log('Código do Vendedor',user['CodVendedor']);
-      //     this.usersService.setCodVendedor(user['CodVendedor']);
-      //     this.usersService.setVendedor(user['nome']);
-      //     isDone = true;
-      //   }
-      // }
-      // if(isDone){
-      //   this.nav.navigateForward('/lista-medicos');
-      // } else {
-      //   this.presentToast();
-      // }
-      // this.cLogin="";
-      // this.cSenha="";
     }).catch((error:any) => {
       console.log('ERRO HOME',error);
     }).finally(() => {
@@ -63,24 +44,6 @@ export class ListaMedicosPage {
   proximo(){
     this.nav.navigateForward('tabs/tab3');
   }
-
-  // public itens=[
-  //   {status:1,medico:'Pedro',cotacoes:1,especialidade:'Joelho'},
-  //   {status:1,medico:'Antonio',cotacoes:3,especialidade:'Quadril'},
-  //   {status:0,medico:'Joao Francisco',cotacoes:0,especialidade:'Joelho'},
-  //   {status:1,medico:'Antonio Cesar',cotacoes:12,especialidade:'Ombro'},
-  //   {status:1,medico:'Camila Goes',cotacoes:42,especialidade:'Joelho'},
-  //   {status:0,medico:'Gustavo',cotacoes:0,especialidade:'Coluna'}
-  // ];
-
-  // public totalitens=[
-  //   {status:1,medico:'Pedro',cotacoes:1,especialidade:'Joelho'},
-  //   {status:1,medico:'Antonio',cotacoes:3,especialidade:'Quadril'},
-  //   {status:0,medico:'Joao Francisco',cotacoes:0,especialidade:'Joelho'},
-  //   {status:1,medico:'Antonio Cesar',cotacoes:12,especialidade:'Ombro'},
-  //   {status:1,medico:'Camila Goes',cotacoes:42,especialidade:'Joelho'},
-  //   {status:0,medico:'Gustavo',cotacoes:0,especialidade:'Coluna'}
-  // ];
 
   onSearchTerm(ev: CustomEvent) {
     const val = ev.detail.value;
