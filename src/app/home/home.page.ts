@@ -71,7 +71,7 @@ export class HomePage implements OnInit {
       this.cLogin="";
       this.cSenha="";
     }).catch((error:any) => {
-      console.log('erro',error);
+      console.log('ERRO HOME',error);
     }).finally(() => {
     });
   }

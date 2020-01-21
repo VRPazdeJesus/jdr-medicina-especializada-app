@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 // import { HTTP } from '@ionic-native/http/ngx';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 // import { ListaMedicosPage } from './lista-medicos/lista-medicos.page';
 // import 'rxjs/add/operator/map';
 
@@ -8,30 +8,37 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
   providedIn: 'root'
 })
 export class UsersService {
+  // public httpOptions = {
+  //   headers: new HttpHeaders({
+  //     'Accept': 'application/json',
+  //     'Content-Type':  'application/json',
+  //     'Access-Control-Allow-Origin': 'http://api.jdr.com.br:9010/',
+  //     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT'
+  //     })
+  //   };
   public headers = new HttpHeaders();
-  
-  // private API_URL = 'https://reqres.in/api/';
-  private API_URL = 'http://api.jdr.com.br:8082/REST/';
+  // public options = new RequestOptions({headers: this.headers}); 
+  // private API_URL = 'http://reqres.in/api/';
+  private API_URL = 'http://api.jdr.com.br/REST/';
   private vendedor:string;
 
   constructor(private http: HttpClient) {
     this.headers.append("Accept", 'application/json');
     this.headers.append('Content-Type', 'application/json');
-    this.headers.append('Access-Control-Allow-Origin', 'http://api.jdr.com.br');
+    this.headers.append('Access-Control-Allow-Origin', 'http://api.jdr.com.br/');
     this.headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
   }
 
   login(email: string, password: string) {
-    
-
     console.log('email', email);
     console.log('senha', password);
     return new Promise((resolve, reject) => {
-      // this.http.get(this.API_URL + 'LOGINS?XXX', { headers: headers })
-      this.http.get(this.API_URL + 'LOGINS?XXX', { headers: this.headers })
+      // let headers = this.headers
+      this.http.get(this.API_URL + 'LOGINS')
         .subscribe((result: any) => {
+
           console.log('RESULT IN SERVICE',result);
-          resolve(result);
+          // resolve(result);
         },
         (error) => {
           reject(error);
