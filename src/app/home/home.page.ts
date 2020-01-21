@@ -54,16 +54,17 @@ export class HomePage implements OnInit {
 
   login(value){   
     this.usersService.login(value.email, value.password).then((result:any) => {
-
-      console.log('RESULT SERVICE', result);
-      
-
-      for(let user of result['data']){
-        console.log(user);
+      let isDone: boolean = false;
+      for(let user of result['usuario']){
+        if(user['email']==value.email && user['senha']==value.password){
+          console.log('Existe');
+          console.log('Código do Vendedor',user['CodVendedor']);
+          this.usersService.setCodVendedor(user['CodVendedor']);
+          this.usersService.setVendedor(user['nome']);
+          isDone = true;
+        }
       }
-      
-      if(result['data'][0]['name'] == 'cerulean' && value.email == 'teste@jdr.com.br'){
-        this.usersService.setVendedor(result['data'][0]['name']);
+      if(isDone){
         this.nav.navigateForward('/lista-medicos');
       } else {
         this.presentToast();
