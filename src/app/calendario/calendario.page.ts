@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalendarioPage implements OnInit {
 
-  constructor() { }
+  public funcionario: string;
+
+  constructor() {
+    this.funcionario = "Fulano de Tal";
+  }
 
   ngOnInit() {
   }
