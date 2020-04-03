@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from  '@ionic/angular';
 import { UsersService } from '../users.service';
 
+
 @Component({
   selector: 'app-lista-medicos',
   templateUrl: './lista-medicos.page.html',
@@ -25,9 +26,7 @@ export class ListaMedicosPage {
 
   listaMedicos(){
     this.usersService.listaMedicos(this.codVendedor).then((result:any) => {
-      console.log('LISTA MEDICOS.TS', result);
       for(let doctors of result['medicos']){
-        console.log('FOR LISTA MEDICOS TS',doctors);
         this.itens.push(doctors);
       }
       this.totalitens = this.itens;
@@ -41,8 +40,10 @@ export class ListaMedicosPage {
       this.nav.navigateForward('/home');
   }
 
-  proximo(){
-    this.nav.navigateForward('tabs/tab3');
+  proximo(codigo, medico){
+    this.usersService.setCodMedico(codigo);
+    this.usersService.setNomeMedico(medico);
+    this.nav.navigateForward('/medico');
   }
 
   onSearchTerm(ev: CustomEvent) {

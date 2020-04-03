@@ -57,8 +57,6 @@ export class HomePage implements OnInit {
       let isDone: boolean = false;
       for(let user of result['usuario']){
         if(user['email']==value.email && user['senha']==value.password){
-          console.log('Existe');
-          console.log('Código do Vendedor',user['CodVendedor']);
           this.usersService.setCodVendedor(user['CodVendedor']);
           this.usersService.setVendedor(user['nome']);
           isDone = true;

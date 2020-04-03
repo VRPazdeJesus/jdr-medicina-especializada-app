@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-img class="img-logo-nav" src='../../assets/logo.jpeg'></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="full" color="primary">
+    <ion-label class="titulo">Cotações de: {{medico}}</ion-label>
+  </ion-item>
+
+  <ion-searchbar class="bg-src" (ionChange)="onSearchTerm($event)" placeholder="Procure pelo médico" showCancelButton="focus"></ion-searchbar>
+  <div class="container">
+    <div class="row border-0 bg-src padding-row">
+      <div class="col-1 margin-grid">
+        <ion-icon color="light" class="icon-center" name="arrow-dropright-circle"></ion-icon>
+      </div>
+      <div class="col-3 margin-grid">
+        <label class="listT" >Paciente</label>
+      </div>
+      <div class="col-3 margin-grid">
+        <label class="listT" >Hospital</label>
+      </div>
+      <div class="col-3 margin-grid">
+        <label class="listT" >Total</label>
+      </div>
+      <div class="col-2 margin-grid">
+        <label class="listT" >Cotacaos</label>
+      </div>
+    </div>
+    <div class="row border touch-space" *ngFor="let pacient of pacientes" lines="full" (click)="proximo(pacient.num_cotacao)">
+      <div class="col-1 margin-grid">
+        <ion-icon class="listP" [color]="pacient.status == 0 ? 'danger' : 'success' " name="arrow-dropright-circle"></ion-icon>
+      </div>
+      <div class="col-3 margin-grid">
+        <label class="listP" >{{pacient.paciente}}</label>
+      </div>
+      <div class="col-3 margin-grid">
+        <label class="listP" >{{pacient.cliente}}</label>
+      </div>
+      <div class="col-2 margin-grid">
+        <label class="listP" >{{pacient.valor_total}}</label>
+      </div>
+      <div class="col-3 margin-grid">
+        <label class="listP" >{{pacient.num_cotacao}}</label>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+    <ion-button (click)="voltar()" expand="full">Voltar</ion-button>
+</ion-footer>

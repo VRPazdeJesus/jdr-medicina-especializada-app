@@ -25,7 +25,7 @@
           <label class="listT" >Especialidade</label>
         </div>
       </div>
-      <div class="row border touch-space" *ngFor="let item of itens" lines="full" (click)="proximo()">
+      <div class="row border touch-space" *ngFor="let item of itens" lines="full" (click)="proximo(item.Codigo, item.Nome_Medico)">
         <div class="col-1 margin-grid">
           <ion-icon class="listP" [color]="item.status == 0 ? 'danger' : 'success' " name="arrow-dropright-circle"></ion-icon>
         </div>

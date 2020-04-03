@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-img class="img-logo-nav" src='../../assets/logo.jpeg'></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="full" color="primary">
+    <ion-label class="titulo">Detalhes da Cotação: {{numCotacao}}</ion-label>
+  </ion-item>
+
+  <div class="container" *ngFor="let d of dados">
+    <div class="row">
+      <div class="col-3 no-right">
+        <ion-label class="campo-negrito">Número:</ion-label>
+      </div>
+      <div class="col-9 no-left">
+          <ion-label>{{d.num_cotacao}}</ion-label>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-2 no-right">
+        <ion-label class="campo-negrito">Data:</ion-label>
+      </div>
+      <div class="col-10 no-left">
+        <ion-label>{{d.emissao}}</ion-label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 no-right">
+        <ion-label class="campo-negrito">Hospital:</ion-label>
+      </div>
+      <div class="col-9 no-left">
+        <ion-label>{{d.cliente}}</ion-label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 no-right">
+        <ion-label class="campo-negrito">Médico:</ion-label>
+      </div>
+      <div class="col-9 no-left">
+        <ion-label>{{d.medico}}</ion-label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 no-right">
+        <ion-label class="campo-negrito">Convênio:</ion-label>
+      </div>
+      <div class="col-9 no-left">
+        <ion-label>{{d.convenio}}</ion-label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-5 no-right">
+        <ion-label class="campo-negrito">Data da Cirurgia:</ion-label>
+      </div>
+      <div class="col-7 no-left">
+        <ion-label>{{d.data_cirurgia}}</ion-label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-5 no-right">
+        <ion-label class="campo-negrito">Tipo de Cirurgia:</ion-label>
+      </div>
+      <div class="col-7 no-left">
+        <ion-label></ion-label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4 no-right">
+        <ion-label class="campo-negrito">Valor Total:</ion-label>
+      </div>
+      <div class="col-8 no-left">
+        <ion-label>{{d.valor_total}}</ion-label>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-2 no-right">
+          <ion-label class="campo-negrito">Obs:</ion-label>
+        </div>
+        <div class="col-10 no-left">
+          <ion-label>{{d.observacao}}</ion-label>
+        </div>
+      </div>
+    <div class="row">
+      <ion-textarea class="border margin-textarea" placeholder="Adicionar nova observação."></ion-textarea>
+    </div>
+    <ion-button (click)="salvar()" expand="full">Salvar</ion-button>
+  </div>
+
+</ion-content>
+
+
+<ion-footer>
+    <ion-button (click)="voltar()" expand="full">Voltar</ion-button>
+</ion-footer>

@@ -7,7 +7,15 @@ const routes: Routes = [
   {
     path: 'lista-medicos',
     loadChildren: () => import('./lista-medicos/lista-medicos.module').then( m => m.ListaMedicosPageModule)
+  },  {
+    path: 'medico',
+    loadChildren: () => import('./medico/medico.module').then( m => m.MedicoPageModule)
   },
+  {
+    path: 'cotacao',
+    loadChildren: () => import('./cotacao/cotacao.module').then( m => m.CotacaoPageModule)
+  },
+
 ];
 
 @NgModule({
