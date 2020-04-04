@@ -70,7 +70,7 @@
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-textarea class="border" disabled placeholder="Escreva a observação aqui...">
+          <ion-textarea class="border" [disabled]="!isToggled" placeholder="Escreva a observação aqui...">
           </ion-textarea>
         </ion-col>
       </ion-row>
