@@ -19,14 +19,14 @@ export class DetalheCirurgiaPage implements OnInit {
   public isToggled: boolean;
 
   constructor(private nav:NavController) {
-    this.agendamento = 'Z11256';
+    this.agendamento = 'Z00000';
     this.data = '01/02/2020';
     this.hora = '07:00';
-    this.hospital = 'Hospital Santa Izabel';
-    this.medico = 'Dr. Jack Tequila';
-    this.convenio = 'Bradesco';
-    this.paciente = 'Maria de Lourdes';
-    this.cirurgia = 'ATJ';
+    this.hospital = 'Lorem Ipsum Dolor';
+    this.medico = 'Lorem Ipsum Dolor';
+    this.convenio = 'Lorem Ipsum';
+    this.paciente = "Lorem Ipsum Dolor";
+    this.cirurgia = 'Lorem ipsum';
     this.isToggled = false;
   }
 
