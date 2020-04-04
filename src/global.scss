@@ -102,3 +102,13 @@ label {
 .negrito {
     font-weight: bold;
 }
+.padding-btn {
+    padding: 20px;
+}
+.btn-row {
+    height: 63px !important;
+
+    ion-button {
+        height: 44px !important;
+    }
+}
