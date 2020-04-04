@@ -41,4 +41,8 @@ export class DetalheCirurgiaPage implements OnInit {
     this.nav.navigateForward('/calendario');
   }
 
+  public proxima(){
+    this.nav.navigateForward('/lista-materiais');
+  }
+
 }
