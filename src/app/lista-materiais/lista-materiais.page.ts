@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from  '@ionic/angular';
 
 @Component({
   selector: 'app-lista-materiais',
@@ -15,7 +16,7 @@ export class ListaMateriaisPage implements OnInit {
   public paciente: string;
   public cirurgia: string;
 
-  constructor() {
+  constructor(private nav:NavController) {
     this.agendamento = 'Z00000';
     this.data = '01/02/2020';
     this.hospital = 'Lorem Ipsum Dolor';
@@ -26,6 +27,10 @@ export class ListaMateriaisPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  public voltar() {
+    this.nav.navigateForward('/detalhe-cirurgia');
   }
 
 }
