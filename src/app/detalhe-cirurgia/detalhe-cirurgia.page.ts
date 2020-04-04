@@ -15,6 +15,7 @@ export class DetalheCirurgiaPage implements OnInit {
   public convenio: string;
   public paciente: string;
   public cirurgia: string;
+  public isToggled: boolean;
 
   constructor() {
     this.agendamento = 'Z11256';
@@ -25,9 +26,14 @@ export class DetalheCirurgiaPage implements OnInit {
     this.convenio = 'Bradesco';
     this.paciente = 'Maria de Lourdes';
     this.cirurgia = 'ATJ';
+    this.isToggled = false;
   }
 
   ngOnInit() {
+  }
+
+  public notify() {
+    console.log("Toggled: "+ this.isToggled); 
   }
 
 }
