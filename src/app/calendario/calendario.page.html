@@ -19,6 +19,24 @@
       </ion-row>
     </ion-grid>
   </ion-item>
+  <div class="container">
+    <div class="row border-0 bg-src">
+      <div class="col-6 ion-text-center">
+        <label class="head-list">Data</label>
+      </div>
+      <div class="col-6 ion-text-center">
+        <label class="head-list">Qtd de Cirurgias</label>
+      </div>
+    </div>
+    <div class="row border touch-space" *ngFor="let item of conteudo" lines="full" >
+      <div class="col-6 ion-text-center vertically-center">
+        <label>{{item['data']}}</label>
+      </div>
+      <div class="col-6 ion-text-center vertically-center">
+        <label>{{item['qtd']}}</label>
+      </div>
+    </div>
+  </div>
 </ion-content>
 <ion-footer>
   <ion-button (click)="voltar()" expand="full">Voltar</ion-button>
