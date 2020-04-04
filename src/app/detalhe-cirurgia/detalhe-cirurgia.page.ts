@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from  '@ionic/angular';
 
 @Component({
   selector: 'app-detalhe-cirurgia',
@@ -17,7 +18,7 @@ export class DetalheCirurgiaPage implements OnInit {
   public cirurgia: string;
   public isToggled: boolean;
 
-  constructor() {
+  constructor(private nav:NavController) {
     this.agendamento = 'Z11256';
     this.data = '01/02/2020';
     this.hora = '07:00';
@@ -34,6 +35,10 @@ export class DetalheCirurgiaPage implements OnInit {
 
   public notify() {
     console.log("Toggled: "+ this.isToggled); 
+  }
+
+  public voltar(){
+    this.nav.navigateForward('/calendario');
   }
 
 }
