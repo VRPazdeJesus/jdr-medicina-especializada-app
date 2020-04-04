@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'detalhe-cirurgia',
     loadChildren: () => import('./detalhe-cirurgia/detalhe-cirurgia.module').then( m => m.DetalheCirurgiaPageModule)
   },
+  {
+    path: 'lista-materiais',
+    loadChildren: () => import('./lista-materiais/lista-materiais.module').then( m => m.ListaMateriaisPageModule)
+  },
 
 ];
 
