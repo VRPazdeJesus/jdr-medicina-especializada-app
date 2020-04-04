@@ -15,6 +15,21 @@ export class ListaMateriaisPage implements OnInit {
   public convenio: string;
   public paciente: string;
   public cirurgia: string;
+  public conteudo = [
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1}
+  ];
 
   constructor(private nav:NavController) {
     this.agendamento = 'Z00000';

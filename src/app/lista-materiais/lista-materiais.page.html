@@ -53,6 +53,30 @@
       </ion-row>
     </ion-grid>
   </ion-item>
+  <div class="container">
+    <div class="row border-0 bg-src">
+      <div class="col-4 ion-text-center">
+        <label class="head-list">Produto</label>
+      </div>
+      <div class="col-6 ion-text-center">
+        <label class="head-list">Descrição</label>
+      </div>
+      <div class="col-2 ion-text-center">
+        <label class="head-list">Qtd</label>
+      </div>
+    </div>
+    <div class="row border touch-space" *ngFor="let item of conteudo" lines="full">
+      <div class="col-4 ion-text-center vertically-center">
+        <label class="txt-14">{{item['produto']}}</label>
+      </div>
+      <div class="col-6 ion-text-center vertically-center">
+        <label class="txt-14">{{item['descricao']}}</label>
+      </div>
+      <div class="col-2 ion-text-center vertically-center">
+        <label class="txt-14">{{item['qtd']}}</label>
+      </div>
+    </div>
+  </div>
 </ion-content>
 
 <ion-footer>
