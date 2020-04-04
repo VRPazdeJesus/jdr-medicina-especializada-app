@@ -24,4 +24,8 @@ export class CalendarioPage implements OnInit {
     this.nav.navigateForward('/home');
   }
 
+  proximo(){
+    this.nav.navigateForward('/detalhe-cirurgia');
+  }
+
 }

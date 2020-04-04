@@ -28,7 +28,7 @@
         <label class="head-list">Qtd de Cirurgias</label>
       </div>
     </div>
-    <div class="row border touch-space" *ngFor="let item of conteudo" lines="full" >
+    <div class="row border touch-space" *ngFor="let item of conteudo" lines="full" (click)="proximo()">
       <div class="col-6 ion-text-center vertically-center">
         <label>{{item['data']}}</label>
       </div>
