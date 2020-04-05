@@ -40,10 +40,10 @@
   </ion-item>
   <div class="container">
     <div class="row border-0 bg-src">
-      <div class="col-1 ion-text-center">
+      <div class="col-2 ion-text-center">
         
       </div>
-      <div class="col-4 ion-text-center">
+      <div class="col-3 ion-text-center">
         <label class="head-list">PRODUTO</label>
       </div>
       <div class="col-4 ion-text-center">
@@ -54,10 +54,10 @@
       </div>
     </div>
     <div class="row border touch-space" *ngFor="let item of conteudo" lines="full">
-      <div class="col-1 ion-text-center vertically-center">
-        
+      <div class="col-2 ion-text-center vertically-center">
+        <ion-checkbox checked="true" color="success"></ion-checkbox>
       </div>
-      <div class="col-4 ion-text-center vertically-center">
+      <div class="col-3 ion-text-center vertically-center">
         <label class="txt-14">{{item['produto']}}</label>
       </div>
       <div class="col-4 ion-text-center vertically-center">
