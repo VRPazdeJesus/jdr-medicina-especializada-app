@@ -7,7 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MateriaisUtilizadosPage implements OnInit {
 
-  constructor() { }
+  public hospital: string;
+  public medico: string;
+  public paciente: string;
+  public conteudo = [
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
+    {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1}
+  ];
+
+  constructor() {
+    this.hospital = 'Lorem Ipsum Dolor';
+    this.medico = 'Lorem Ipsum Dolor';
+    this.paciente = "Lorem Ipsum Dolor";
+  }
 
   ngOnInit() {
   }

@@ -5,5 +5,67 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-item lines="full" color="primary">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h5 class="remove-margin">Materiais Utilizados</h5>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="approach-line">
+          <ion-label class="size-details"><span class="txt-details">Hospital: </span>{{hospital}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="approach-line">
+          <ion-label class="size-details"><span class="txt-details">Médico: </span>{{medico}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="approach-line">
+          <ion-label class="size-details"><span class="txt-details">Paciente: </span>{{paciente}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="approach-line">
+          <ion-textarea class="border" placeholder="Escreva a observação aqui..."></ion-textarea>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <div class="container">
+    <div class="row border-0 bg-src">
+      <div class="col-1 ion-text-center">
+        
+      </div>
+      <div class="col-4 ion-text-center">
+        <label class="head-list">PRODUTO</label>
+      </div>
+      <div class="col-4 ion-text-center">
+        <label class="head-list">DESCRIÇÃO</label>
+      </div>
+      <div class="col-3 ion-text-center">
+        <label class="head-list">CODEBAR</label>
+      </div>
+    </div>
+    <div class="row border touch-space" *ngFor="let item of conteudo" lines="full">
+      <div class="col-1 ion-text-center vertically-center">
+        
+      </div>
+      <div class="col-4 ion-text-center vertically-center">
+        <label class="txt-14">{{item['produto']}}</label>
+      </div>
+      <div class="col-4 ion-text-center vertically-center">
+        <label class="txt-14">{{item['descricao']}}</label>
+      </div>
+      <div class="col-3 ion-text-center vertically-center">
+        <label class="txt-14">{{item['qtd']}}</label>
+      </div>
+    </div>
+  </div>
 </ion-content>
