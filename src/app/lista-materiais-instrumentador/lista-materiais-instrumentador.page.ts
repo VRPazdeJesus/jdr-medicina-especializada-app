@@ -45,6 +45,6 @@ export class ListaMateriaisInstrumentadorPage implements OnInit {
   }
 
   public finalizar() {
-    this.nav.navigateForward('/detalhe-cirurgia');
+    this.nav.navigateForward('/materiais-utilizados');
   }
 }
