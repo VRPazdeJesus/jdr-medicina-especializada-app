@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'lista-materiais-instrumentador',
     loadChildren: () => import('./lista-materiais-instrumentador/lista-materiais-instrumentador.module').then( m => m.ListaMateriaisInstrumentadorPageModule)
   },
+  {
+    path: 'materiais-utilizados',
+    loadChildren: () => import('./materiais-utilizados/materiais-utilizados.module').then( m => m.MateriaisUtilizadosPageModule)
+  },
 
 ];
 
