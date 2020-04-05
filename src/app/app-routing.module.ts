@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'lista-materiais',
     loadChildren: () => import('./lista-materiais/lista-materiais.module').then( m => m.ListaMateriaisPageModule)
   },
+  {
+    path: 'lista-materiais-instrumentador',
+    loadChildren: () => import('./lista-materiais-instrumentador/lista-materiais-instrumentador.module').then( m => m.ListaMateriaisInstrumentadorPageModule)
+  },
 
 ];
 
