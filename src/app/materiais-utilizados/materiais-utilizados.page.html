@@ -41,7 +41,6 @@
   <div class="container">
     <div class="row border-0 bg-src">
       <div class="col-2 ion-text-center">
-        
       </div>
       <div class="col-3 ion-text-center">
         <label class="head-list">PRODUTO</label>
@@ -69,3 +68,16 @@
     </div>
   </div>
 </ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <ion-button (click)="finalizar()" expand="full" color="danger">Câmera</ion-button>
+      </ion-col>
+      <ion-col size="8">
+        <ion-button (click)="finalizar()" expand="full" color="primary">Salvar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
