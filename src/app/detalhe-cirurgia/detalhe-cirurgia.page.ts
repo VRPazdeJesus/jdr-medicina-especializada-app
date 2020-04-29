@@ -38,7 +38,7 @@ export class DetalheCirurgiaPage implements OnInit {
   }
 
   public voltar(){
-    this.nav.navigateForward('/calendario');
+    this.nav.navigateForward('/agenda');
   }
 
   public proxima(){
