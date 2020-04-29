@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: 'lista-medicos',
     loadChildren: () => import('./lista-medicos/lista-medicos.module').then( m => m.ListaMedicosPageModule)
-  },  {
+  },
+  {
     path: 'medico',
     loadChildren: () => import('./medico/medico.module').then( m => m.MedicoPageModule)
   },
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'materiais-utilizados',
     loadChildren: () => import('./materiais-utilizados/materiais-utilizados.module').then( m => m.MateriaisUtilizadosPageModule)
+  },
+  {
+    path: 'agenda',
+    loadChildren: () => import('./agenda/agenda.module').then( m => m.AgendaPageModule)
   },
 
 ];
