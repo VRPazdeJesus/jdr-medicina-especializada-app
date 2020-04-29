@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-img class="img-logo-nav" src='../../assets/logo.jpeg'></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="full" color="primary">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h5 class="remove-margin">Agenda de Cirurgias</h5>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="approach-line">
+          <ion-label class="size-details"><span class="txt-details">Vendedor: </span>{{vendedor}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="approach-line">
+          <ion-label class="size-details"><span class="txt-details">Data: </span>{{data}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="approach-line">
+          <ion-searchbar (ionChange)="onSearchTerm($event)" placeholder="Procurar" showCancelButton="focus"></ion-searchbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <div class="container">
+    <div class="row border-0 bg-src">
+      <div class="col-3 ion-text-center">
+        <label class="head-list">HORA</label>
+      </div>
+      <div class="col-4 ion-text-center">
+        <label class="head-list">HOSPITAL</label>
+      </div>
+      <div class="col-5 ion-text-center">
+        <label class="head-list">TIPO DE CIRURGIA</label>
+      </div>
+    </div>
+    <div class="row border touch-space" *ngFor="let item of conteudo" lines="full" (click)="proximo()">
+      <div class="col-3 ion-text-center vertically-center">
+        <label class="txt-14">{{item['hora']}}</label>
+      </div>
+      <div class="col-4 ion-text-center vertically-center">
+        <label class="txt-14">{{item['hospital']}}</label>
+      </div>
+      <div class="col-5 ion-text-center vertically-center">
+        <label class="txt-14">{{item['tipo']}}</label>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="voltar()" expand="full" color="primary">Voltar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
