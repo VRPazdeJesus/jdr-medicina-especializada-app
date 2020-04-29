@@ -33,6 +33,12 @@ export class ListaMedicosPage {
     }).catch((error:any) => {
       console.log('ERRO HOME',error);
     }).finally(() => {
+      //TESTE
+      this.itens = [
+        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 2, Codigo:'Lorem Ipsum'},
+        {status: 0, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 0, Codigo:'Lorem Ipsum'},
+        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum'}
+      ]
     });
   }
 
