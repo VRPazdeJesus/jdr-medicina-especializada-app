@@ -86,11 +86,9 @@ ion-searchbar {
 .line {
     border-bottom: 1px solid #273258;
 }
+/* Elemento da lista sem borda */
 .no-line {
     border:none;
-}
-ion-row:host {
-    background-color: rgba(39,50,88,0.2);
 }
 /* Posicionando ícone no centro da coluna */
 .icon-list {
