@@ -15,6 +15,7 @@ export class ListaMateriaisInstrumentadorPage implements OnInit {
   public convenio: string;
   public paciente: string;
   public cirurgia: string;
+  public lastItem:any;
   public conteudo = [
     {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
     {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:1},
@@ -39,6 +40,7 @@ export class ListaMateriaisInstrumentadorPage implements OnInit {
     this.convenio = 'Lorem Ipsum';
     this.paciente = "Lorem Ipsum Dolor";
     this.cirurgia = 'Lorem ipsum';
+    this.lastItem = this.conteudo[this.conteudo.length - 1];
   }
 
   ngOnInit() {
