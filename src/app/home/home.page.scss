@@ -1,28 +1,38 @@
+/* Posicionamento da logo no centro */
 img {
     display: inline;
     width: 40%;
-  }
+}
+/* Background branco do card*/
 .bg-white{
     background-color: white;
 }
+/* Background azul do plano de fundo*/
 .bg-blue{
-    background-color: #414199;
+    background-color: #273258;
 }
+/* Altura de 100% da tela */
 .full-h{
     height: 100%;
 }
+/* Largura de 100% da tela */
 .full-w{
     width: 100%;
 }
+/* Card no centro da tela vertical e
+* horizontalmente
+*/
 .grid-v-center{
     height: 100%;
     align-items: center!important;
     align-content: center!important;
     display: flex!important;
 }
+/* Label do input em azul */
 ion-label{
-    color:#414199!important;
+    color:#273258!important;
 }
+/* Botão entrar */
 ion-button{
     margin-top:10%;
 }
