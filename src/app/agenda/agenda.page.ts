@@ -10,6 +10,7 @@ export class AgendaPage implements OnInit {
 
   public vendedor: string;
   public data: string;
+  public lastItem:any
   public conteudo = [
     {hora:'07:00',hospital:'COT',tipo:'LCA-BIO'},
     {hora:'07:30',hospital:'SEMED',tipo:'ATJ'},
@@ -31,7 +32,8 @@ export class AgendaPage implements OnInit {
 
   constructor(private nav:NavController) {
     this.vendedor = 'Lorem Ipsum Dolor';
-    this.data = '02/02/2020';
+    this.data = 'XX/XX/XXXX';
+    this.lastItem = this.conteudo[this.conteudo.length - 1];
   }
 
   ngOnInit() {

@@ -28,6 +28,7 @@
     text-transform: uppercase;
     font-weight: 600;
     color: #273258;
+    display: block;
 }
 /* Input para pesquisa de dados */
 ion-searchbar {
@@ -77,6 +78,9 @@ ion-searchbar {
         color: #273258;
         padding: 0.5rem;
     }
+    .click-with-text {
+        height: 3rem !important;
+    }
     ion-col {
         display: -webkit-flexbox;
         display: -ms-flexbox;
@@ -119,6 +123,10 @@ ion-searchbar {
 /* Altura de linha clicável */
 .click-height {
     height: 45px !important;
+}
+/* Afastamento do botão do rodapé */
+.btn-distance {
+    padding-bottom: 10px;
 }
 
 

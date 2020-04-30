@@ -1,69 +1,66 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-img class="img-logo-nav" src='../../assets/logo.jpeg'></ion-img>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
-  <ion-item lines="full" color="primary">
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <h5 class="remove-margin">Agenda de Cirurgias</h5>
+  <ion-grid>
+    <!-- Cabeçalho da página -->
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <img class="logo" src='../../assets/jdr-news.png'>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label class="title">Agenda de Cirurgias</ion-label>
+        <ion-label class="subtitle">Vendedor: {{vendedor}}</ion-label>
+        <ion-label class="subtitle">Data: {{data}}</ion-label>
+      </ion-col>
+      <ion-col size="12">
+        <ion-searchbar class="" (ionChange)="onSearchTerm($event)" placeholder="Procure pelo médico" showCancelButton="focus"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+    <!-- Conteúdo da página -->
+    <!-- Cabeçalho da tabela -->
+    <ion-row class="list-head small-distance">
+      <ion-col size="1" class="ion-text-center">
+        <ion-icon color="light" name="arrow-dropright-circle"></ion-icon>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="subtitle" color="light">Hora</ion-label>
+      </ion-col>
+      <ion-col size="4" class="ion-text-center">
+        <ion-label class="subtitle" color="light">Hospital</ion-label>
+      </ion-col>
+      <ion-col size="4" class="ion-text-center">
+        <ion-label class="subtitle" color="light">Tipo de Cirurgia</ion-label>
+      </ion-col>
+    </ion-row>
+    <!-- Conteúdo da tabela -->
+    <div class="list-content">
+      <ion-row *ngFor="let item of conteudo" [class]="item == lastItem ? 'no-line' : 'line'" (click)="proximo()">
+        <ion-col size="1" class="ion-text-center click-with-text">
+          <ion-icon color="primary" name="arrow-dropright-circle"></ion-icon>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center click-with-text">
+          <ion-label class="subtitle">{{item['hora']}}</ion-label>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center click-with-text">
+          <ion-label class="subtitle">{{item['hospital']}}</ion-label>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center click-with-text">
+          <ion-label class="subtitle">{{item['tipo']}}</ion-label>
         </ion-col>
       </ion-row>
-    </ion-grid>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-grid>
-      <ion-row>
-        <ion-col class="approach-line">
-          <ion-label class="size-details"><span class="txt-details">Vendedor: </span>{{vendedor}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="approach-line">
-          <ion-label class="size-details"><span class="txt-details">Data: </span>{{data}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="approach-line">
-          <ion-searchbar (ionChange)="onSearchTerm($event)" placeholder="Procurar" showCancelButton="focus"></ion-searchbar>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-item>
-  <div class="container">
-    <div class="row border-0 bg-src">
-      <div class="col-3 ion-text-center">
-        <label class="head-list">HORA</label>
-      </div>
-      <div class="col-4 ion-text-center">
-        <label class="head-list">HOSPITAL</label>
-      </div>
-      <div class="col-5 ion-text-center">
-        <label class="head-list">TIPO DE CIRURGIA</label>
-      </div>
     </div>
-    <div class="row border touch-space" *ngFor="let item of conteudo" lines="full" (click)="proximo()">
-      <div class="col-3 ion-text-center vertically-center">
-        <label class="txt-14">{{item['hora']}}</label>
-      </div>
-      <div class="col-4 ion-text-center vertically-center">
-        <label class="txt-14">{{item['hospital']}}</label>
-      </div>
-      <div class="col-5 ion-text-center vertically-center">
-        <label class="txt-14">{{item['tipo']}}</label>
-      </div>
-    </div>
-  </div>
+  </ion-grid>
 </ion-content>
 
 <ion-footer>
   <ion-grid>
-    <ion-row>
+    <ion-row class="btn-distance">
       <ion-col>
-        <ion-button (click)="voltar()" expand="full" color="primary">Voltar</ion-button>
+        <ion-button class="btn-jdr" (click)="voltar()" expand="block">Voltar</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
