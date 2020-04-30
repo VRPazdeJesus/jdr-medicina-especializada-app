@@ -1,84 +1,64 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-img class="img-logo-nav" src='../../assets/logo.jpeg'></ion-img>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
-  <ion-item lines="full" color="primary">
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <h5 class="remove-margin">Lista de Materiais Enviados</h5>
+  <ion-grid>
+    <!-- Cabeçalho da página -->
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <img class="logo" src='../../assets/jdr-news.png'>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label class="title">Materiais enviados</ion-label>
+        <ion-label class="subtitle"><span class="negrito">Agendamento: </span>{{agendamento}}</ion-label>
+        <ion-label class="subtitle"><span class="negrito">Data: </span>{{data}}y</ion-label>
+        <ion-label class="subtitle"><span class="negrito">Hospital: </span>{{hospital}}</ion-label>
+        <ion-label class="subtitle"><span class="negrito">Médico: </span>{{medico}}</ion-label>
+        <ion-label class="subtitle"><span class="negrito">Convênio: </span>{{convenio}}</ion-label>
+        <ion-label class="subtitle"><span class="negrito">Paciente: </span>{{paciente}}</ion-label>
+        <ion-label class="subtitle"><span class="negrito">Cirurgia: </span>{{cirurgia}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <!-- Conteúdo da página -->
+    <!-- Cabeçalho da tabela -->
+    <ion-row class="list-head">
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="subtitle" color="light">Produto</ion-label>
+      </ion-col>
+      <ion-col size="5" class="ion-text-center">
+        <ion-label class="subtitle" color="light">Descrição</ion-label>
+      </ion-col>
+      <ion-col size="4" class="ion-text-center">
+        <ion-label class="subtitle" color="light">Quantidade</ion-label>
+      </ion-col>
+    </ion-row>
+    <!-- Conteúdo da tabela -->
+    <div class="list-content">
+      <ion-row *ngFor="let item of conteudo" [class]="item == lastItem ? 'no-line' : 'line'" (click)="proximo(item.Codigo, item.Nome_Medico)">
+        <ion-col size="3" class="ion-text-center click-with-text">
+          <ion-label class="subtitle">{{item['produto']}}</ion-label>
+        </ion-col>
+        <ion-col size="5" class="ion-text-center click-with-text">
+          <ion-label class="subtitle">{{item['descricao']}}</ion-label>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center click-with-text">
+          <ion-label class="subtitle">{{item['qtd']}}</ion-label>
         </ion-col>
       </ion-row>
-    </ion-grid>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-grid>
-      <ion-row>
-        <ion-col class="approach-line">
-          <ion-label class="size-details"><span class="txt-details">Agendamento: </span>{{agendamento}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="approach-line">
-          <ion-label class="size-details"><span class="txt-details">Data: </span>{{data}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="approach-line">
-          <ion-label class="size-details"><span class="txt-details">Hospital: </span>{{hospital}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="approach-line">
-          <ion-label class="size-details"><span class="txt-details">Médico: </span>{{medico}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="approach-line">
-          <ion-label class="size-details"><span class="txt-details">Convênio: </span>{{convenio}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="approach-line">
-          <ion-label class="size-details"><span class="txt-details">Paciente: </span>{{paciente}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="approach-line">
-          <ion-label class="size-details"><span class="txt-details">Cirurgia: </span>{{cirurgia}}</ion-label>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-item>
-  <div class="container">
-    <div class="row border-0 bg-src">
-      <div class="col-4 ion-text-center">
-        <label class="head-list">Produto</label>
-      </div>
-      <div class="col-6 ion-text-center">
-        <label class="head-list">Descrição</label>
-      </div>
-      <div class="col-2 ion-text-center">
-        <label class="head-list">Qtd</label>
-      </div>
     </div>
-    <div class="row border touch-space" *ngFor="let item of conteudo" lines="full">
-      <div class="col-4 ion-text-center vertically-center">
-        <label class="txt-14">{{item['produto']}}</label>
-      </div>
-      <div class="col-6 ion-text-center vertically-center">
-        <label class="txt-14">{{item['descricao']}}</label>
-      </div>
-      <div class="col-2 ion-text-center vertically-center">
-        <label class="txt-14">{{item['qtd']}}</label>
-      </div>
-    </div>
-  </div>
+  </ion-grid>
+
 </ion-content>
 
 <ion-footer>
-  <ion-button (click)="voltar()" expand="full">Voltar</ion-button>
+  <ion-grid>
+    <ion-row class="btn-distance">
+      <ion-col>
+        <ion-button class="btn-jdr" (click)="voltar()" expand="block">Voltar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-footer>
