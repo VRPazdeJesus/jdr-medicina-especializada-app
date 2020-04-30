@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-materiais-utilizados',
@@ -29,7 +29,7 @@ export class MateriaisUtilizadosPage implements OnInit {
     {produto:'AR-6410',descricao:'EQUIPO PARA BOMA',qtd:'S700014235'}
   ];
 
-  constructor(private barcodeScanner: BarcodeScanner, public alertController: AlertController) {
+  constructor(private barcodeScanner: BarcodeScanner, public alertController: AlertController, private nav:NavController) {
     this.hospital = 'Lorem Ipsum Dolor';
     this.medico = 'Lorem Ipsum Dolor';
     this.paciente = "Lorem Ipsum Dolor";
@@ -58,6 +58,10 @@ export class MateriaisUtilizadosPage implements OnInit {
       buttons: ['OK']
     });
     await alert.present();
+  }
+
+  public salvar(){
+    this.nav.navigateForward('/lista-medicos');
   }
 
   ngOnInit() {
