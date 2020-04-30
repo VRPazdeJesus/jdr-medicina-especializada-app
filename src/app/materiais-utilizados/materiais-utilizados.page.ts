@@ -8,7 +8,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./materiais-utilizados.page.scss'],
 })
 export class MateriaisUtilizadosPage implements OnInit {
-
+  public lastItem:any;
   public txt:any;
   public hospital: string;
   public medico: string;
@@ -33,6 +33,7 @@ export class MateriaisUtilizadosPage implements OnInit {
     this.hospital = 'Lorem Ipsum Dolor';
     this.medico = 'Lorem Ipsum Dolor';
     this.paciente = "Lorem Ipsum Dolor";
+    this.lastItem = this.conteudo[this.conteudo.length - 1];
   }
 
   readBarCode() {

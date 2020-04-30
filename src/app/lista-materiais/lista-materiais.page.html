@@ -37,7 +37,7 @@
     </ion-row>
     <!-- Conteúdo da tabela -->
     <div class="list-content">
-      <ion-row *ngFor="let item of conteudo" [class]="item == lastItem ? 'no-line' : 'line'" (click)="proximo(item.Codigo, item.Nome_Medico)">
+      <ion-row *ngFor="let item of conteudo" [class]="item == lastItem ? 'no-line' : 'line'">
         <ion-col size="3" class="ion-text-center click-with-text">
           <ion-label class="subtitle">{{item['produto']}}</ion-label>
         </ion-col>
@@ -50,7 +50,6 @@
       </ion-row>
     </div>
   </ion-grid>
-
 </ion-content>
 
 <ion-footer>

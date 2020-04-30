@@ -1,82 +1,68 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-img class="img-logo-nav" src='../../assets/logo.jpeg'></ion-img>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
-  <ion-item lines="full" color="primary">
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <h5 class="remove-margin">Materiais Utilizados</h5>
+  <ion-grid>
+    <!-- Cabeçalho da página -->
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <img class="logo" src='../../assets/jdr-news.png'>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label class="title">Materiais utilizados</ion-label>
+        <ion-label class="subtitle"><span class="negrito">Hospital: </span>{{hospital}}</ion-label>
+        <ion-label class="subtitle"><span class="negrito">Médico: </span>{{medico}}</ion-label>
+        <ion-label class="subtitle"><span class="negrito">Paciente: </span>{{paciente}}</ion-label>
+      </ion-col>
+    </ion-row>
+    <!-- Conteúdo da página -->
+    <!-- Cabeçalho da tabela -->
+    <ion-row class="list-head">
+      <ion-col size="2" class="ion-text-center">
+        
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="subtitle" color="light">PRODUTO</ion-label>
+      </ion-col>
+      <ion-col size="4" class="ion-text-center">
+        <ion-label class="subtitle" color="light">DESCRIÇÃO</ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="subtitle" color="light">CODEBAR</ion-label>
+      </ion-col>
+    </ion-row>
+    <!-- Conteúdo da tabela -->
+    <div class="list-content">
+      <ion-row *ngFor="let item of conteudo" [class]="item == lastItem ? 'no-line' : 'line'">
+        <ion-col size="2" class="ion-text-center">
+          <ion-checkbox checked="true" color="success"></ion-checkbox>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center click-with-text">
+          <ion-label class="subtitle">{{item['produto']}}</ion-label>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center click-with-text">
+          <ion-label class="subtitle">{{item['descricao']}}</ion-label>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center click-with-text">
+          <ion-label class="subtitle">{{item['qtd']}}</ion-label>
         </ion-col>
       </ion-row>
-    </ion-grid>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-grid>
-      <ion-row>
-        <ion-col class="approach-line">
-          <ion-label class="size-details"><span class="txt-details">Hospital: </span>{{hospital}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="approach-line">
-          <ion-label class="size-details"><span class="txt-details">Médico: </span>{{medico}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="approach-line">
-          <ion-label class="size-details"><span class="txt-details">Paciente: </span>{{paciente}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="approach-line">
-          <ion-textarea class="border" placeholder="Escreva a observação aqui..."></ion-textarea>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-item>
-  <div class="container">
-    <div class="row border-0 bg-src">
-      <div class="col-2 ion-text-center">
-      </div>
-      <div class="col-3 ion-text-center">
-        <label class="head-list">PRODUTO</label>
-      </div>
-      <div class="col-4 ion-text-center">
-        <label class="head-list">DESCRIÇÃO</label>
-      </div>
-      <div class="col-3 ion-text-center">
-        <label class="head-list">CODEBAR</label>
-      </div>
     </div>
-    <div class="row border touch-space" *ngFor="let item of conteudo" lines="full">
-      <div class="col-2 ion-text-center vertically-center">
-        <ion-checkbox checked="true" color="success"></ion-checkbox>
-      </div>
-      <div class="col-3 ion-text-center vertically-center">
-        <label class="txt-14">{{item['produto']}}</label>
-      </div>
-      <div class="col-4 ion-text-center vertically-center">
-        <label class="txt-14">{{item['descricao']}}</label>
-      </div>
-      <div class="col-3 ion-text-center vertically-center">
-        <label class="txt-14">{{item['qtd']}}</label>
-      </div>
-    </div>
-  </div>
+  </ion-grid>
+
 </ion-content>
 
 <ion-footer>
   <ion-grid>
     <ion-row>
       <ion-col size="4">
-        <ion-button (click)="readBarCode()" expand="full" color="danger">Câmera</ion-button>
+        <ion-button (click)="readBarCode()" expand="block" color="danger">Câmera</ion-button>
       </ion-col>
       <ion-col size="8">
-        <ion-button (click)="finalizar()" expand="full" color="primary">Salvar</ion-button>
+        <ion-button (click)="finalizar()" expand="block" color="primary">Salvar</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
