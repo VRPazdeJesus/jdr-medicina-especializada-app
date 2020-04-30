@@ -10,10 +10,15 @@ import { UsersService } from '../users.service';
 export class MedicoPage {
 
   public medico = '';
+  public pacientes=[];
+  public totalpacientes=[];
+  public lastPacient:any;
 
   constructor(private nav:NavController, private usersService: UsersService) {
     this.medico = this.usersService.getNomeMedico();
     this.buscaPaciente();
+    //TESTE
+    this.medico = "Lorem Ipsum Dolar";
   }
 
   buscaPaciente(){
@@ -25,6 +30,13 @@ export class MedicoPage {
     }).catch((error:any) => {
       console.log('ERRO HOME',error);
     }).finally(() => {
+      this.pacientes = [
+        {status: 1, paciente: "Lorem Ipsum Dolar", cliente:"Lorem Ipsum Dolar", valor_total:"XX.XXX,XX", num_cotacao: "XX/XX/XXXX"},
+        {status: 1, paciente: "Lorem Ipsum Dolar", cliente:"Lorem Ipsum Dolar", valor_total:"XX.XXX,XX", num_cotacao: "XX/XX/XXXX"},
+        {status: 1, paciente: "Lorem Ipsum Dolar", cliente:"Lorem Ipsum Dolar", valor_total:"XX.XXX,XX", num_cotacao: "XX/XX/XXXX"},
+        {status: 1, paciente: "Lorem Ipsum Dolar", cliente:"Lorem Ipsum Dolar", valor_total:"XX.XXX,XX", num_cotacao: "XX/XX/XXXX"}
+      ];
+      this.lastPacient = this.pacientes[this.pacientes.length - 1];
     });
   }
 
@@ -36,11 +48,6 @@ export class MedicoPage {
     this.usersService.setCodCotacao(codigo);
     this.nav.navigateForward('/cotacao');
   }
-
-  public pacientes=[];
-
-  public totalpacientes=[];
-
 
   onSearchTerm(ev: CustomEvent) {
     const val = ev.detail.value;

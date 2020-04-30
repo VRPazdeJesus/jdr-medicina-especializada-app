@@ -38,7 +38,7 @@ export class ListaMedicosPage {
     }).finally(() => {
       //TESTE
       this.itens = [
-        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 2, Codigo:'Lorem Ipsum Dolar'},
+        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 4, Codigo:'Lorem Ipsum Dolar'},
         {status: 0, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 0, Codigo:'Lorem Ipsum Dolar'},
         {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'},
         {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'},

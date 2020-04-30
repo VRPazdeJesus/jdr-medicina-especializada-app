@@ -1,53 +1,67 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-img class="img-logo-nav" src='../../assets/logo.jpeg'></ion-img>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
-  <ion-item lines="full" color="primary">
-    <ion-label class="titulo">Cotações de: {{medico}}</ion-label>
-  </ion-item>
+  <ion-grid>
+    <!-- Cabeçalho da página -->
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <img class="logo" src='../../assets/jdr-news.png'>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label class="title">Cotações</ion-label>
+        <ion-label class="subtitle">Médico: {{medico}}</ion-label>
+      </ion-col>
+      <ion-col size="12">
+        <ion-searchbar class="" (ionChange)="onSearchTerm($event)" placeholder="Procure pelo paciente" showCancelButton="focus"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+    <!-- Conteúdo da página -->
+    <!-- Cabeçalho da tabela -->
+    <ion-row class="list-head">
+      <ion-col size="1" class="ion-text-center">
+        <ion-icon color="light" class="icon-list" name="arrow-dropright-circle"></ion-icon>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="subtitle" color="light">Paciente</ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="subtitle" color="light">Hospital</ion-label>
+      </ion-col>
+      <ion-col size="2" class="ion-text-center">
+        <ion-label class="subtitle" color="light">Total</ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="subtitle" color="light">Cotações</ion-label>
+      </ion-col>
+    </ion-row>
+    <!-- Conteúdo da tabela -->
+    <div class="list-content">
+      <ion-row *ngFor="let pacient of pacientes" [class]="pacient == lastPacient ? 'no-line' : 'line'" (click)="proximo(pacient.num_cotacao)">
+        <ion-col size="1" class="ion-text-center">
+          <ion-icon class="icon-list" [color]="pacient.status == 0 ? 'danger' : 'success' " name="arrow-dropright-circle"></ion-icon>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center">
+          <ion-label class="subtitle">{{pacient.paciente}}</ion-label>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center">
+          <ion-label class="subtitle">{{pacient.cliente}}</ion-label>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center">
+          <ion-label class="subtitle">{{pacient.valor_total}}</ion-label>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center">
+          <ion-label class="subtitle">{{pacient.num_cotacao}}</ion-label>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
 
-  <ion-searchbar class="bg-src" (ionChange)="onSearchTerm($event)" placeholder="Procure pelo médico" showCancelButton="focus"></ion-searchbar>
-  <div class="container">
-    <div class="row border-0 bg-src padding-row">
-      <div class="col-1 margin-grid">
-        <ion-icon color="light" class="icon-center" name="arrow-dropright-circle"></ion-icon>
-      </div>
-      <div class="col-3 margin-grid">
-        <label class="listT" >Paciente</label>
-      </div>
-      <div class="col-3 margin-grid">
-        <label class="listT" >Hospital</label>
-      </div>
-      <div class="col-3 margin-grid">
-        <label class="listT" >Total</label>
-      </div>
-      <div class="col-2 margin-grid">
-        <label class="listT" >Cotacaos</label>
-      </div>
-    </div>
-    <div class="row border touch-space" *ngFor="let pacient of pacientes" lines="full" (click)="proximo(pacient.num_cotacao)">
-      <div class="col-1 margin-grid">
-        <ion-icon class="listP" [color]="pacient.status == 0 ? 'danger' : 'success' " name="arrow-dropright-circle"></ion-icon>
-      </div>
-      <div class="col-3 margin-grid">
-        <label class="listP" >{{pacient.paciente}}</label>
-      </div>
-      <div class="col-3 margin-grid">
-        <label class="listP" >{{pacient.cliente}}</label>
-      </div>
-      <div class="col-2 margin-grid">
-        <label class="listP" >{{pacient.valor_total}}</label>
-      </div>
-      <div class="col-3 margin-grid">
-        <label class="listP" >{{pacient.num_cotacao}}</label>
-      </div>
-    </div>
-  </div>
 </ion-content>
 
 <ion-footer>
-    <ion-button (click)="voltar()" expand="full">Voltar</ion-button>
+  <ion-button class="btn-jdr" (click)="voltar()" expand="block">Voltar</ion-button>
 </ion-footer>
