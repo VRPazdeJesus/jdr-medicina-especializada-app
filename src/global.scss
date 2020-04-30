@@ -102,6 +102,18 @@ ion-row:host {
 .btn-jdr {
     text-transform: uppercase;
 }
+/* Texto em negrito */
+.negrito {
+    font-weight: bold;
+}
+/* Texto azul na tonalidade da JDR */
+.txt-blue-jdr{
+    color: #273258;
+}
+/* Margem referente ao topo */
+.distance {
+    margin-top: 40px;
+}
 
 
 
@@ -119,9 +131,7 @@ ion-row:host {
 .bg-src{
     background-color: #414199;
 }
-.txt-blue-jdr{
-    color: #414199;
-}
+
 .padding-row{
     padding-bottom: 3%;
 }
@@ -180,9 +190,7 @@ label {
     font-weight: bold;
     color: #414199;
 }
-.negrito {
-    font-weight: bold;
-}
+
 .padding-btn {
     padding: 20px;
 }

@@ -14,6 +14,8 @@ export class CotacaoPage implements OnInit {
   constructor(private nav:NavController, private usersService: UsersService) {
     this.numCotacao = this.usersService.getCodCotacao();  
     this.buscaCotacao();
+    //TESTE
+    this.numCotacao = "XX/XX/XXXX";
   }
 
   public dados = [];
@@ -26,10 +28,20 @@ export class CotacaoPage implements OnInit {
     }).catch((error:any) => {
       console.log('ERRO HOME',error);
     }).finally(() => {
+      //TESTE
+      this.dados = [
+        {
+          num_cotacao: "XX/XX/XXXX",
+          emissao: "XXXXXXXX",
+          cliente: "Lorem Ipsum Dolar",
+          medico: "Lorem Ipsum Dolar",
+          convenio: "Lorem Ipsum Dolar",
+          data_cirurgia: "XX/XX/XXXX",
+          valor_total: "XX.XXX,XX",
+        }
+      ]
     });   
   }
-
-  
 
   ngOnInit() {
   }
