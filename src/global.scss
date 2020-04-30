@@ -70,6 +70,13 @@ ion-searchbar {
         font-weight: 600;
         color: #273258;
     }
+    .click-subtitle {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #273258;
+        padding: 0.5rem;
+    }
     ion-col {
         display: -webkit-flexbox;
         display: -ms-flexbox;
@@ -105,6 +112,13 @@ ion-searchbar {
 /* Margem referente ao topo */
 .distance {
     margin-top: 40px;
+}
+.small-distance {
+    margin-top: 16px;
+}
+/* Altura de linha clicável */
+.click-height {
+    height: 45px !important;
 }
 
 
