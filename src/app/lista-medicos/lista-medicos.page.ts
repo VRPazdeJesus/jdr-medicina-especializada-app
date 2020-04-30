@@ -13,6 +13,7 @@ export class ListaMedicosPage {
   public codVendedor:string;
   public itens=[];
   public totalitens=[];
+  public lastItem:any;
 
   constructor(private nav:NavController, private usersService: UsersService) {
     this.getDataVendedor();
@@ -37,10 +38,15 @@ export class ListaMedicosPage {
     }).finally(() => {
       //TESTE
       this.itens = [
-        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 2, Codigo:'Lorem Ipsum'},
-        {status: 0, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 0, Codigo:'Lorem Ipsum'},
-        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum'}
+        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 2, Codigo:'Lorem Ipsum Dolar'},
+        {status: 0, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 0, Codigo:'Lorem Ipsum Dolar'},
+        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'},
+        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'},
+        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'},
+        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'},
+        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'}
       ]
+      this.lastItem = this.itens[this.itens.length - 1];
     });
   }
 
@@ -63,6 +69,7 @@ export class ListaMedicosPage {
       });
     } else{
       this.itens = this.totalitens;
+      this.lastItem = this.itens[this.itens.length - 1];
     }
   }
 

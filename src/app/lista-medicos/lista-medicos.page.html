@@ -6,6 +6,7 @@
 
 <ion-content>
   <ion-grid>
+    <!-- Cabeçalho da página -->
     <ion-row>
       <ion-col size="12" class="ion-text-center">
         <img class="logo" src='../../assets/jdr-news.png'>
@@ -17,46 +18,41 @@
       <ion-col size="12">
         <ion-searchbar class="" (ionChange)="onSearchTerm($event)" placeholder="Procure pelo médico" showCancelButton="focus"></ion-searchbar>
       </ion-col>
-    </ion-row>  
+    </ion-row>
+    <!-- Conteúdo da página -->
+    <!-- Cabeçalho da tabela -->
+    <ion-row class="list-head">
+      <ion-col size="1" class="ion-text-center">
+        <ion-icon color="light" class="icon-list" name="arrow-dropright-circle"></ion-icon>
+      </ion-col>
+      <ion-col size="4" class="ion-text-center">
+        <ion-label class="subtitle" color="light">Médico</ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label class="subtitle" color="light">Cotações</ion-label>
+      </ion-col>
+      <ion-col size="4" class="ion-text-center">
+        <ion-label class="subtitle" color="light">Especialidade</ion-label>
+      </ion-col>
+    </ion-row>
+    <!-- Conteúdo da tabela -->
+    <div class="list-content">
+      <ion-row *ngFor="let item of itens" [class]="item == lastItem ? 'no-line' : 'line'" (click)="proximo(item.Codigo, item.Nome_Medico)">
+        <ion-col size="1" class="ion-text-center">
+          <ion-icon class="icon-list" [color]="item.status == 0 ? 'danger' : 'success' " name="arrow-dropright-circle"></ion-icon>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center">
+          <ion-label class="subtitle">{{item.Nome_Medico}}</ion-label>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center">
+          <ion-label class="subtitle">{{item.Total_Cotacoes}}</ion-label>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center">
+          <ion-label class="subtitle">{{item.Codigo}}</ion-label>
+        </ion-col>
+      </ion-row>
+    </div>
   </ion-grid>
-
-
-
-
-
-
-
-
-  <div class="container">
-    <div class="row border-0 bg-src padding-row">
-      <div class="col-1 margin-grid">
-        <ion-icon color="light" class="icon-center" name="arrow-dropright-circle"></ion-icon>
-      </div>
-      <div class="col-5 margin-grid">
-        <label class="listT" >Médico</label>
-      </div>
-      <div class="col-3 margin-grid">
-        <label class="listT" >Cotações</label>
-      </div>
-      <div class="col-3 margin-grid">
-        <label class="listT" >Especialidade</label>
-      </div>
-    </div>
-    <div class="row border touch-space" *ngFor="let item of itens" lines="full" (click)="proximo(item.Codigo, item.Nome_Medico)">
-      <div class="col-1 margin-grid">
-        <ion-icon class="listP" [color]="item.status == 0 ? 'danger' : 'success' " name="arrow-dropright-circle"></ion-icon>
-      </div>
-      <div class="col-5 margin-grid">
-        <label class="listP" >{{item.Nome_Medico}}</label>
-      </div>
-      <div class="col-3 margin-grid">
-        <label class="listP" >{{item.Total_Cotacoes}}</label>
-      </div>
-      <div class="col-3 margin-grid">
-        <label class="listP" >{{item.Codigo}}</label>
-      </div>
-    </div>
-  </div>
 </ion-content>
 <ion-footer>
   <ion-button class="btn-jdr" (click)="voltar()" expand="block">Voltar</ion-button>

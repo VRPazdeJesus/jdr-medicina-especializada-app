@@ -38,6 +38,51 @@ ion-searchbar {
         border: 1px solid #273258 !important;
     }
 }
+/* Cabeçalho da lista */
+.list-head {
+    background-color: #273258;
+    border-radius: 10px 10px 0px 0px;
+    .subtitle {
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: white;
+    }
+
+}
+/* Conteúdo da lista */
+.list-content {
+    border-left: 1px solid #273258;
+    border-right: 1px solid #273258;
+    border-bottom: 1px solid #273258;
+    border-radius: 0px 0px 10px 10px;
+
+    ion-col {
+        display: -webkit-flexbox;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        justify-content: center;
+    }
+}
+/* Borda nas linhas da lista */
+.line {
+    border-bottom: 1px solid #273258;
+}
+.no-line {
+    border:none;
+}
+ion-row:host {
+    background-color: rgba(39,50,88,0.2);
+}
+/* Posicionando ícone no centro da coluna */
+.icon-list {
+    transform: translateX(50%);
+}
 /* Texto no botão */
 .btn-jdr {
     text-transform: uppercase;
