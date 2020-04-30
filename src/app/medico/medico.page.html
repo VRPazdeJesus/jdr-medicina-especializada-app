@@ -23,7 +23,7 @@
     <!-- Cabeçalho da tabela -->
     <ion-row class="list-head">
       <ion-col size="1" class="ion-text-center">
-        <ion-icon color="light" class="icon-list" name="arrow-dropright-circle"></ion-icon>
+        <ion-icon color="light" name="arrow-dropright-circle"></ion-icon>
       </ion-col>
       <ion-col size="3" class="ion-text-center">
         <ion-label class="subtitle" color="light">Paciente</ion-label>
@@ -42,7 +42,7 @@
     <div class="list-content">
       <ion-row *ngFor="let pacient of pacientes" [class]="pacient == lastPacient ? 'no-line' : 'line'" (click)="proximo(pacient.num_cotacao)">
         <ion-col size="1" class="ion-text-center">
-          <ion-icon class="icon-list" [color]="pacient.status == 0 ? 'danger' : 'success' " name="arrow-dropright-circle"></ion-icon>
+          <ion-icon [color]="pacient.status == 0 ? 'danger' : 'success' " name="arrow-dropright-circle"></ion-icon>
         </ion-col>
         <ion-col size="3" class="ion-text-center">
           <ion-label class="subtitle">{{pacient.paciente}}</ion-label>
