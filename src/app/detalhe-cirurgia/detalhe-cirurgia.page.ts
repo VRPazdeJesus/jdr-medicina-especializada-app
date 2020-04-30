@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from  '@ionic/angular';
+import { NavController, ToastController } from  '@ionic/angular';
 
 @Component({
   selector: 'app-detalhe-cirurgia',
@@ -18,7 +18,7 @@ export class DetalheCirurgiaPage implements OnInit {
   public cirurgia: string;
   public isToggled: boolean;
 
-  constructor(private nav:NavController) {
+  constructor(private nav:NavController, private toast:ToastController) {
     this.agendamento = 'Z00000';
     this.data = '01/02/2020';
     this.hora = '07:00';
@@ -38,11 +38,34 @@ export class DetalheCirurgiaPage implements OnInit {
   }
 
   public voltar(){
-    this.nav.navigateForward('/agenda');
+    if(this.isToggled) {
+      this.presentToast('Salve o que escreveu antes de continuar','warning');
+    } else {
+      this.nav.navigateForward('/agenda');
+    }
   }
 
   public proxima(){
-    this.nav.navigateForward('/lista-materiais');
+    if(this.isToggled) {
+      this.presentToast('Salve o que escreveu antes de continuar','warning');
+    } else {
+      this.nav.navigateForward('/lista-materiais');
+    }
+  }
+
+  public salvar() {
+    this.isToggled = false;
+    this.presentToast('Mensagem salva com sucesso','success');
+  }
+
+  async presentToast(message:string, css:string) {
+    const toast = await this.toast.create({
+      message: message,
+      color: css,
+      position: 'middle',
+      duration: 2000
+    });
+    toast.present();
   }
 
 }
