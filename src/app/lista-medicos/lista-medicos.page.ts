@@ -21,33 +21,34 @@ export class ListaMedicosPage {
   }
 
   getDataVendedor(){
-    this.vendedor = this.usersService.getVendedor();
-    this.codVendedor = this.usersService.getCodVendedor();
+    // this.vendedor = this.usersService.getVendedor();
+    // this.codVendedor = this.usersService.getCodVendedor();
     //TESTE
     this.vendedor = "Lorem Ipsum Dolar";
   }
 
   listaMedicos(){
-    this.usersService.listaMedicos(this.codVendedor).then((result:any) => {
-      for(let doctors of result['medicos']){
-        this.itens.push(doctors);
-      }
-      this.totalitens = this.itens;
-    }).catch((error:any) => {
-      console.log('ERRO HOME',error);
-    }).finally(() => {
-      //TESTE
-      this.itens = [
-        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 4, Codigo:'Lorem Ipsum Dolar'},
-        {status: 0, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 0, Codigo:'Lorem Ipsum Dolar'},
-        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'},
-        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'},
-        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'},
-        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'},
-        {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'}
-      ]
-      this.lastItem = this.itens[this.itens.length - 1];
-    });
+    // this.usersService.listaMedicos(this.codVendedor).then((result:any) => {
+    //   for(let doctors of result['medicos']){
+    //     this.itens.push(doctors);
+    //   }
+    //   this.totalitens = this.itens;
+    // }).catch((error:any) => {
+    //   console.log('ERRO HOME',error);
+    // }).finally(() => {
+      
+    // });
+    //TESTE
+    this.itens = [
+      {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 4, Codigo:'Lorem Ipsum Dolar'},
+      {status: 0, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 0, Codigo:'Lorem Ipsum Dolar'},
+      {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'},
+      {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'},
+      {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'},
+      {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'},
+      {status: 1, Nome_Medico:'Lorem Ipsum Dolar', Total_Cotacoes: 1, Codigo:'Lorem Ipsum Dolar'}
+    ]
+    this.lastItem = this.itens[this.itens.length - 1];
   }
 
   voltar(){
@@ -55,8 +56,8 @@ export class ListaMedicosPage {
   }
 
   proximo(codigo, medico){
-    this.usersService.setCodMedico(codigo);
-    this.usersService.setNomeMedico(medico);
+    // this.usersService.setCodMedico(codigo);
+    // this.usersService.setNomeMedico(medico);
     this.nav.navigateForward('/medico');
   }
 
