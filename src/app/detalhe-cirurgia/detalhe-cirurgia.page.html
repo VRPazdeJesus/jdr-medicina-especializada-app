@@ -1,87 +1,72 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-img class="img-logo-nav" src='../../assets/logo.jpeg'></ion-img>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
-  <ion-item lines="full" color="primary">
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <h5 class="remove-margin">Detalhe da Cirurgia</h5>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-label class="size-details"><span class="txt-details">Agendamento: </span>{{agendamento}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-label class="size-details"><span class="txt-details">Data: </span>{{data}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-label class="size-details"><span class="txt-details">Hora: </span>{{hora}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-label class="size-details"><span class="txt-details">Hospital: </span>{{hospital}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-label class="size-details"><span class="txt-details">Médico: </span>{{medico}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-label class="size-details"><span class="txt-details">Convênio: </span>{{convenio}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-label class="size-details"><span class="txt-details">Paciente: </span>{{paciente}}</ion-label>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-label class="size-details"><span class="txt-details">Cirurgia: </span>{{cirurgia}}</ion-label>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-grid>
-      <ion-row>
-        <ion-col size="9">
-          <h5 class="remove-margin txt-blue-jdr negrito">Incluir observações</h5>
-        </ion-col>
-        <ion-col size="3">
-          <ion-toggle [(ngModel)]="isToggled" (ionChange)="notify()" color="primary" type="ios"></ion-toggle>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-textarea class="border" [disabled]="!isToggled" placeholder="Escreva a observação aqui..."></ion-textarea>
-        </ion-col>
-      </ion-row>
-      <ion-row class="btn-row">
-        <ion-col>
-          <ion-button (click)="proxima()" expand="full">Ver lista de Materiais</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-item>
+  <ion-grid>
+    <!-- Cabeçalho da página -->
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <img class="logo" src='../../assets/jdr-news.png'>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label class="title">Detalhe da cirurgia</ion-label>
+      </ion-col>
+    </ion-row>
+    <!-- Conteúdo da página -->
+    <!-- Lista de informações -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-label class="txt-blue-jdr"> <span class="negrito">Agendamento: </span>{{agendamento}}</ion-label>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label class="txt-blue-jdr"> <span class="negrito">Data: </span>{{data}}</ion-label>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label class="txt-blue-jdr"> <span class="negrito">Hora: </span>{{hora}}</ion-label>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label class="txt-blue-jdr"> <span class="negrito">Hospital: </span>{{hospital}}</ion-label>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label class="txt-blue-jdr"> <span class="negrito">Médico: </span>{{medico}}</ion-label>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label class="txt-blue-jdr"> <span class="negrito">Convênio: </span>{{convenio}}</ion-label>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label class="txt-blue-jdr"> <span class="negrito">Paciente: </span>{{paciente}}</ion-label>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label class="txt-blue-jdr"> <span class="negrito">Cirurgia: </span>{{cirurgia}}</ion-label>
+      </ion-col>
+      <ion-col size="9">
+        <ion-label class="txt-blue-jdr"> <span class="negrito">Incluir observações:</span></ion-label>
+      </ion-col>
+      <ion-col size="3">
+        <ion-toggle [(ngModel)]="isToggled" (ionChange)="notify()" color="primary" type="ios"></ion-toggle>
+      </ion-col>
+      <ion-col size="12">
+        <ion-textarea class="border" [disabled]="!isToggled" placeholder="Escreva a observação aqui..."></ion-textarea>
+      </ion-col>
+      <ion-col size="12">
+        <ion-button class="btn-jdr" (click)="salvar()" expand="block" fill="outline">Salvar</ion-button>
+      </ion-col>
+      <ion-col size="12" class="small-distance">
+        <ion-button class="btn-jdr" (click)="proxima()" expand="block">Ver Lista de material</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
 <ion-footer>
-  <ion-button (click)="voltar()" expand="full">Voltar</ion-button>
+  <ion-grid>
+    <ion-row class="btn-distance">
+      <ion-col>
+        <ion-button class="btn-jdr" (click)="voltar()" expand="block">Voltar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-footer>
