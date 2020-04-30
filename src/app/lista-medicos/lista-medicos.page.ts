@@ -22,6 +22,8 @@ export class ListaMedicosPage {
   getDataVendedor(){
     this.vendedor = this.usersService.getVendedor();
     this.codVendedor = this.usersService.getCodVendedor();
+    //TESTE
+    this.vendedor = "Lorem Ipsum Dolar";
   }
 
   listaMedicos(){

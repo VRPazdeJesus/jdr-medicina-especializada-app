@@ -21,7 +21,7 @@
     text-transform: uppercase;
     color: #273258;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
     display: block;
 }
 /* Propriedades do subtitulo */
@@ -30,6 +30,17 @@
     text-transform: uppercase;
     font-weight: 600;
     color: #273258;
+}
+/* Input para pesquisa de dados */
+ion-searchbar {
+    padding: 0 !important;
+    input {
+        border: 1px solid #273258 !important;
+    }
+}
+/* Texto no botão */
+.btn-jdr {
+    text-transform: uppercase;
 }
 
 
